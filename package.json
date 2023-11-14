@@ -1,0 +1,61 @@
+{
+  "name": "my-webpack-project",
+  "module": "main.tsx",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/react": "^18.2.31",
+    "@types/react-dom": "^18.2.14",
+    "@webpack-cli/generators": "^3.0.7",
+    "bun-types": "latest",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "jsdoc": "^4.0.2",
+    "mini-css-extract-plugin": "^2.7.6",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.0",
+    "eslint": "^8.52.0",
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "comment_SETUP": "-- SETUP--",
+    "//01": "run: $ npm run setup # once first",
+    "setup-dir": "mkdir -p build && mkdir -p src && touch src/index.html src/index.js src/style.css",
+    "setup-deps": "npm install typescript && npm install eslint && npm install prettier",
+    "comment_LINT": "-- LINT --",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "comment_DOCUMENTATION": " -- DOCUMENTATION -- ",
+    "comment_doc_all_files_in_dir": "run jsdoc for whole directory: https://stackoverflow.com/questions/40353988/how-to-run-jsdoc-on-whole-directory-in-ubuntu",
+    "mkdoc": "jsdoc -r src",
+    "comment_BUILD": " -- BUILD --",
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "comment_WATCH": "-- WATCH --",
+    "comment_watch-vs-dev-server": "see: https://stackoverflow.com/questions/38089785/webpack-watch-vs-hot-whats-the-difference",
+    "watch": "webpack --watch",
+    "dev-server": "webpack-dev-server --mode development --open --hot",
+    "comment_TEST": "-- TEST --",
+    "test": "echo 'TODO: add your test runners",
+    "serve": "webpack serve",
+    "comment_VERSION": "-- VERSION --",
+    "preversion": "git fetch --tags && npm run lint:check && npm test",
+    "version": "npm run build",
+    "postversion": "git push --follow-tags",
+    "comment-backup": "-- BACKUP --",
+    "backup-readme": "cp README.md README_.md"
+  },
+  "version": "1.1.0",
+  "description": "My webpack project"
+}
